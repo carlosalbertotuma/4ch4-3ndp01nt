@@ -33,7 +33,6 @@ echo -e "\e[0m"
 
 dep()
 {
-#echo "Testando dependenciais"
 echo ""
 if ! [[ -e ~/$1 ]];then echo "Arquivo url ~/$1 nao existe";banner;exit;else echo "" >/dev/null;fi
 if ! [[ -e ~/$2 ]];then echo "Arquvivo enpoint ~/$2 nao existe";banner;exit;else echo "" >/dev/null;fi
@@ -56,7 +55,6 @@ then
 elif [[ $4 == s ]];
 then
     echo "Modo Silent"
-#    dep
     echo ""
     echo "Servidores Ativos"
     for ii in $(cat $1);do echo $ii | httprobe | sort -u | anew ativos-$3.txt;done
@@ -68,7 +66,6 @@ then
     banner
     echo""
     echo "Modo Normal"
-#    dep
     echo ""
     echo "Servidores Ativos"
     for ii in $(cat $1);do echo $ii | httprobe | sort -u | anew ativos-$3.txt;done
